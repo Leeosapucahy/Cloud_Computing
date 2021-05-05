@@ -1,2 +1,0 @@
-# INmetrics
-Aplicações dos desafios
