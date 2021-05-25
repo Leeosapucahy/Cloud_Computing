@@ -12,7 +12,8 @@ resource "aws_autoscaling_group" "asg" {
   desired_capacity   = 1
   max_size           = 3
   min_size           = 1
-
+  #vpc_zone_identifier = [aws_subnet.private_app_a.id, aws_subnet.private_app_c.id]
+  
   launch_template {
     id      = aws_launch_template.asg_sre.id
     version = "$Latest"

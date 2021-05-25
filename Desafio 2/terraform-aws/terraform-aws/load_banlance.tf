@@ -1,6 +1,11 @@
 resource "aws_elb" "Load_balance" {
-  name    = "load-balance"
-  
+  name    = "10"
+  #Interanl = false
+  #Load_balancer_type = "application"
+  subnets = [ 
+    aws_subnet.public_a.id,
+    aws_subnet.public_c.id
+  ]
 
 
   listener {
