@@ -24,7 +24,7 @@ variable "password" {
 
 variable "user" {
   default = "admin"
-  
+
 }
 
 

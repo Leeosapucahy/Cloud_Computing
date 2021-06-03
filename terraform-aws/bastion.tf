@@ -20,6 +20,12 @@ resource "aws_instance" "bastion_sever" {
     destination = "/home/ubuntu/"
   }
 
+  provisioner "remote-exec"{
+    inline = [
+    "chmod 700 terraform-aws-mp",
+    "sudo apt install mysql-client-core-8.0",
+    "mysql -h ${aws_db_instance.database.address} -P 3306 -u ${var.user} -p${var.password} < database.sql"
+  ]
+  }
+
 }
-
-

@@ -1,6 +1,6 @@
 resource "aws_launch_configuration" "lc_clientes" {
   name_prefix     = "api_clientes"
-  image_id        = "ami-0da64de48ed2f7b4f"
+  image_id        = "ami-09c9061e80000f265"
   key_name        = var.key_name
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.apis.id]
@@ -9,7 +9,7 @@ resource "aws_launch_configuration" "lc_clientes" {
 
 resource "aws_launch_configuration" "lc_catalogo" {
   name_prefix     = "api_catalogo"
-  image_id        = "ami-04708757cb3ac7c8f"
+  image_id        = "ami-07a617a70b84c9032"
   key_name        = var.key_name
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.apis.id]
@@ -18,7 +18,7 @@ resource "aws_launch_configuration" "lc_catalogo" {
 
 resource "aws_launch_configuration" "lc_inventario" {
   name_prefix     = "api_inventario"
-  image_id        = "ami-035c012bed0f91f2f"
+  image_id        = "ami-027251dec79c86570"
   key_name        = var.key_name
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.apis.id]
@@ -38,7 +38,7 @@ resource "aws_autoscaling_group" "asg_clientes" {
 
   health_check_grace_period = 300
   health_check_type         = "ELB" # Cria os alarmes de instrução
-  target_group_arns         = [aws_lb_target_group.my_alb_target_group.arn]
+  target_group_arns         = [aws_lb_target_group.my_alb_target_group1.arn]
 
   tag {
     key                 = "Name"
@@ -59,7 +59,7 @@ resource "aws_autoscaling_group" "asg_catalogo" {
 
   health_check_grace_period = 300
   health_check_type         = "ELB" # Cria os alarmes de instrução
-  target_group_arns         = [aws_lb_target_group.my_alb_target_group.arn]
+  target_group_arns         = [aws_lb_target_group.my_alb_target_group2.arn]
 
   tag {
     key                 = "Name"
@@ -80,7 +80,7 @@ resource "aws_autoscaling_group" "asg_inventario" {
 
   health_check_grace_period = 300
   health_check_type         = "ELB" # Cria os alarmes de instrução
-  target_group_arns         = [aws_lb_target_group.my_alb_target_group.arn]
+  target_group_arns         = [aws_lb_target_group.my_alb_target_group3.arn]
 
   tag {
     key                 = "Name"
