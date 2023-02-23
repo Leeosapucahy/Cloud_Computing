@@ -1,4 +1,4 @@
-# Projeto Cloud 
+# Projeto EKS
 
   - Projeto desenvolvido com a finalidade de criar um cluster eks com todos os componentes necessários.
 
@@ -10,4 +10,4 @@
 
   - Pronto, seu cluster eks está no ar!
 
-       - (obs: aws precisa estar conectada corretamente com a CLI do usuário e com as suas devidas keys)
+       - (Observação: AWS precisa estar conectada corretamente com a CLI do usuário e com as suas devidas keys)
